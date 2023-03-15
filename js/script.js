@@ -33,6 +33,23 @@
                 }
             ]
       }
+    },
+    methods: {
+        prevImage() {
+            this.activeImage--;
+            if (this.activeImage < 0) {
+                this.activeImage = this.slides.length - 1;
+            }
+        },
+        nextImage() {
+            this.activeImage++;
+            if (this.activeImage == this.slides.length) {
+                this.activeImage = 0;
+            }
+        },
+        changeImage(newActiveImage) {
+            this.activeImage = newActiveImage;
+        },
     }
   }).mount('#app')
 
