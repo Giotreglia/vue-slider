@@ -4,6 +4,7 @@
   createApp({
     data() {
       return {
+        autoplay: null,
         activeImage: 0,
         slides: [
                 {
@@ -51,10 +52,10 @@
             this.activeImage = newActiveImage;
         },
         stopInterval() {
-            clearInterval(autoplay);
+            clearInterval(this.autoplay);
         },
         startInterval() {
-            autoplay = setInterval(this.nextImage, 3000);
+            this.autoplay = setInterval(this.nextImage, 3000);
         }
         
     },
